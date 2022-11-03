@@ -24,5 +24,8 @@
     Warning: Codes that arent mine isnt noted or somthing else. But the Esp, Ui Library, Config system, Notification Ui, Getplayer Function, Bullet Tracer and cframe speed Is not mine.
     Warning2: The locals And functions are really messed up. What im meaning is that im ass att coding.
     
-    - Ui lib by: CatzCode. https://github.com/CatzCode/cattoware
-    - Notiffication ui by: BoredStuff2 on twitter
+    ---------------------------------------------------------------
+    - Ui lib by: CatzCode. https://github.com/CatzCode/cattoware  -
+    - Notiffication ui by: BoredStuff2 on twitter                 -
+    - Big shoutout to them                                        -
+    ---------------------------------------------------------------
