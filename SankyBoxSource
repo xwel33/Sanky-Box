@@ -2042,23 +2042,6 @@ loadscreen3:AddButton(
                                     end
                                 )
                             end
-                            if
-                                AimlockTarget and resolvertypev22 == "DetectDesync" and AimlockTarget.Character ~= nil and
-                                    AimlockTarget.Character:FindFirstChild("HumanoidRootPart")
-                             then
-                                if
-                                    AimlockTarget.Character:WaitForChild("HumanoidRootPart").Velocity.magnitude >
-                                        Desyncdetect
-                                 then
-                                    pcall(
-                                        function()
-                                            local hrp = AimlockTarget.Character.HumanoidRootPart
-                                            hrp.Velocity = Vector3.new(0, 0, 0)
-                                            hrp.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                                        end
-                                    )
-                                end
-                            end
                         end
                     end
                 )
@@ -2937,24 +2920,6 @@ loadscreen3:AddButton(
                                             Vector3.new(hrpb6.Velocity.X, 0, hrpb6.Velocity.Z)
                                     end
                                 )
-                            end
-                            if
-                                game.Players[targetplr] and resolvertypev2 == "DetectDesync" and
-                                    game.Players[targetplr].Character ~= nil and
-                                    game.Players[targetplr].Character:FindFirstChild("HumanoidRootPart")
-                             then
-                                if
-                                    game.Players[targetplr].Character:WaitForChild("HumanoidRootPart").Velocity.magnitude >
-                                        Resolverdetections
-                                 then
-                                    pcall(
-                                        function()
-                                            local hr9p = game.Players[targetplr].Character.HumanoidRootPart
-                                            hr9p.Velocity = Vector3.new(0, 0, 0)
-                                            hr9p.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                                        end
-                                    )
-                                end
                             end
                         end
                     end
