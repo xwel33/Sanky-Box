@@ -4528,7 +4528,7 @@ loadscreen3:AddButton(
                 local spinXD = false
                 local velocitytype = "Custom"
                 local notifyvel = false
-                local visualizevelocity = false
+
                 local Velmultiplier = 1.5
                 local Notificationstype2 = "Roblox"
                 local BruhXD = game:GetService("RunService")
@@ -4610,130 +4610,33 @@ loadscreen3:AddButton(
                             if velocitytype == "Custom" then
                                 LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity =
                                     Vector3.new(oldVelocityxx, oldVelocityyy, oldVelocityzz) * Powervel
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        Vector3.new(
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X +
-                                            oldVelocityxx * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y +
-                                            oldVelocityyy * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z +
-                                            oldVelocityzz * (Powervel)
-                                    )
-                                else
-                                    velocityball.Transparency = 1
-                                end
                             elseif velocitytype == "NoVelocity" then
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        Vector3.new(
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
-                                    )
-                                else
-                                    velocityball.Transparency = 1
-                                end
                                 LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(1, 1, 1) * 0
                             elseif velocitytype == "LookVector" then
                                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity =
                                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector *
                                     Powervel
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position +
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector *
-                                            (Powervel)
-                                else
-                                    velocityball.Transparency = 1
-                                end
                             elseif velocitytype == "Random" then
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        Vector3.new(
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X +
-                                            randomxx * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y +
-                                            randomyy * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z +
-                                            randomzz * (Powervel)
-                                    )
-                                else
-                                    velocityball.Transparency = 1
-                                end
                                 LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity =
                                     Vector3.new(randomxx, randomyy, randomzz) * Powervel
                             elseif velocitytype == "Underground" then
                                 LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity =
                                     Vector3.new(0, -10, 0) * Powervel
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        Vector3.new(
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y +
-                                            -10 * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
-                                    )
-                                else
-                                    velocityball.Transparency = 1
-                                end
                             elseif velocitytype == "MouseControl" then
                                 LocalPlayer.Character.HumanoidRootPart.Velocity =
                                     (game.Players.LocalPlayer:GetMouse().hit.p -
                                     LocalPlayer.Character.HumanoidRootPart.Position).Unit *
                                     Powervel +
                                     workspace.CurrentCamera.CFrame.LookVector * Powervel
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position +
-                                        (game.Players.LocalPlayer:GetMouse().hit.p -
-                                            game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Unit *
-                                            Powervel +
-                                        workspace.CurrentCamera.CFrame.LookVector * Powervel
-                                else
-                                    velocityball.Transparency = 1
-                                end
                             elseif velocitytype == "Up" then
                                 LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity =
                                     Vector3.new(0, 10, 0) * Powervel
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        Vector3.new(
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y + 10 * (Powervel),
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
-                                    )
-                                else
-                                    velocityball.Transparency = 1
-                                end
-                            elseif velocitytype == "MultiPlier" then
-                                local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
-                                hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z) * (Velmultiplier)
-                                if visualizevelocity == true then
-                                    velocityball.Transparency = 0
-                                    velocityball.Position =
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position +
-                                        (game.Players.LocalPlayer.Character.LowerTorso.Velocity * Velmultiplier / 10)
-                                else
-                                    velocityball.Transparency = 1
-                                end
                             end
 
                             game:GetService("RunService").RenderStepped:Wait()
 
                             LocalPlayer.Character.HumanoidRootPart.CFrame = DesyncTypes[1]
                             LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = DesyncTypes[2]
-                        else
-                            if visualizevelocity == true then
-                                velocityball.Transparency = 1
-                            end
                         end
                     end
                 )
@@ -4788,14 +4691,6 @@ loadscreen3:AddButton(
                     end
                 )
 
-                local visualizedesyncvelspoofer =
-                    antilock63:AddToggle(
-                    "Visualize",
-                    false,
-                    function(Boolean)
-                        visualizevelocity = Boolean
-                    end
-                )
 
                 visualizedesyncvelspoofer:AddColorpicker(
                     Color3.fromRGB(0, 140, 175),
